@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luz Angelical - Conecta con tu Esencia Espiritual</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #4A90E2;
+            --soft-blue: #E8F2FF;
+            --deep-blue: #2C5282;
+            --warm-white: #FEFEFE;
+            --earth-brown: #8B7355;
+            --soft-gold: #F4E4BC;
+            --gentle-gray: #F7F9FC;
+            --text-dark: #2D3748;
+            --text-light: #718096;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--warm-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-blue), var(--deep-blue));
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(74, 144, 226, 0.15);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Manrope', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--warm-white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: "✨";
+            font-size: 1.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--warm-white);
+            text-decoration: none;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--soft-gold);
+            transform: translateY(-2px);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--soft-gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.9), rgba(44, 82, 130, 0.8)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><radialGradient id="g1" cx="50%" cy="40%"><stop offset="0%" style="stop-color:%23E8F2FF;stop-opacity:0.3"/><stop offset="100%" style="stop-color:%234A90E2;stop-opacity:0.1"/></radialGradient></defs><rect width="1200" height="800" fill="url(%23g1)"/><circle cx="200" cy="150" r="3" fill="%23F4E4BC" opacity="0.6"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/></circle><circle cx="800" cy="200" r="2" fill="%23F4E4BC" opacity="0.5"><animate attributeName="opacity" values="0.2;0.7;0.2" dur="4s" repeatCount="indefinite"/></circle><circle cx="1000" cy="300" r="2.5" fill="%23F4E4BC" opacity="0.4"><animate attributeName="opacity" values="0.1;0.6;0.1" dur="5s" repeatCount="indefinite"/></circle></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            color: var(--warm-white);
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 600px;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, var(--soft-gold), var(--earth-brown));
+            color: var(--text-dark);
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(244, 228, 188, 0.4);
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 0;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .section:nth-child(even) {
+            background-color: var(--gentle-gray);
+        }
+
+        .section-title {
+            font-family: 'Manrope', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--deep-blue);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(45deg, var(--primary-blue), var(--soft-gold));
+            border-radius: 2px;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--warm-white);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(74, 144, 226, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, var(--primary-blue), var(--soft-gold));
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(74, 144, 226, 0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary-blue), var(--deep-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .service-card h3 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--deep-blue);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, var(--soft-blue), var(--primary-blue));
+            height: 400px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            color: var(--warm-white);
+            opacity: 0.9;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            background: var(--warm-white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(74, 144, 226, 0.1);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--soft-blue);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(5px);
+            background: var(--primary-blue);
+            color: var(--warm-white);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            min-width: 30px;
+        }
+
+        .contact-form {
+            background: var(--warm-white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(74, 144, 226, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--deep-blue);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--soft-blue);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--deep-blue), var(--primary-blue));
+            color: var(--warm-white);
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Manrope', sans-serif;
+            margin-bottom: 1rem;
+            color: var(--soft-gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            color: var(--warm-white);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--soft-gold);
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+        }
+
+        /* Page Sections */
+        .page {
+            display: none;
+            padding-top: 80px;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .page-title {
+            font-family: 'Manrope', sans-serif;
+            font-size: 3rem;
+            text-align: center;
+            margin: 3rem 0;
+            color: var(--deep-blue);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <a href="#" class="logo" onclick="showPage('home')">Luz Angelical</a>
+                <ul class="nav-menu">
+                    <li><a href="#" class="nav-link" onclick="showPage('home')">Inicio</a></li>
+                    <li><a href="#" class="nav-link" onclick="showPage('about')">Nosotros</a></li>
+                    <li><a href="#" class="nav-link" onclick="showPage('services')">Servicios</a></li>
+                    <li><a href="#" class="nav-link" onclick="showPage('contact')">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Bienvenido a Luz Angelical</h1>
+                <p>Conecta con tu esencia espiritual a través de la sabiduría angelical, el tarot y la meditación. Encuentra paz, armonía y amor incondicional en tu camino de despertar interior.</p>
+                <a href="#" class="cta-button" onclick="showPage('services')">Explorar Servicios</a>
+            </div>
+        </section>
+
+        <!-- Services Preview -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Nuestros Servicios Espirituales</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🕊️</div>
+                        <h3>Lecturas Angelicales</h3>
+                        <p>Conecta con los mensajes de tus ángeles guardianes y arcángeles para recibir guía divina en tu camino espiritual.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🔮</div>
+                        <h3>Tarot Angelical</h3>
+                        <p>Descubre las respuestas que buscas a través de las cartas angelicales y encuentra claridad en tus decisiones.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🧿</div>
+                        <h3>Consultas con Péndulo</h3>
+                        <p>Obtén respuestas precisas y directas del universo mediante la sabiduría ancestral del péndulo.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🧘</div>
+                        <h3>Meditación y Sanación</h3>
+                        <p>Encuentra tu paz interior y equilibra tus energías a través de técnicas de meditación y respiración consciente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page">
+        <div class="container">
+            <h1 class="page-title">Sobre Nosotros</h1>
+            <section class="section">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3 style="color: var(--deep-blue); font-size: 2rem; margin-bottom: 1rem;">Nuestra Misión Espiritual</h3>
+                        <p>En Luz Angelical, creemos profundamente en el poder transformador de la conexión espiritual. Nuestro propósito es guiarte en tu viaje de despertar y autoconocimiento, ayudándote a encontrar tu luz interior y conectar con la sabiduría universal.</p>
+                        
+                        <p>A través de décadas de experiencia en las artes espirituales, hemos desarrollado un enfoque integral que combina la antigua sabiduría de los ángeles y arcángeles con técnicas modernas de meditación, introspección y sanación energética.</p>
+                        
+                        <p>Nuestro equipo está formado por consultores espirituales certificados, lectores de tarot angelical y facilitadores de meditación que han dedicado sus vidas a ayudar a otros en su búsqueda de paz, armonía y amor incondicional.</p>
+
+                        <p>Creemos que cada persona lleva dentro de sí una luz divina esperando ser despertada. Es nuestro honor y privilegio acompañarte en este sagrado viaje de redescubrimiento.</p>
+                    </div>
+                    <div class="about-image">
+                        😇
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" style="background-color: var(--gentle-gray);">
+                <div class="container">
+                    <h2 class="section-title">Nuestros Valores</h2>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-icon">💝</div>
+                            <h3>Amor Incondicional</h3>
+                            <p>Practicamos y enseñamos el amor sin condiciones, creando un espacio seguro para tu crecimiento espiritual.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">☮️</div>
+                            <h3>Paz Interior</h3>
+                            <p>Fomentamos la búsqueda del silencio interior y la tranquilidad como base para la sabiduría espiritual.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🌟</div>
+                            <h3>Iluminación</h3>
+                            <p>Guiamos hacia el despertar de la conciencia y la comprensión profunda de tu propósito de vida.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🔗</div>
+                            <h3>Conexión Universal</h3>
+                            <p>Facilitamos la conexión con tu ser superior, los ángeles y la energía universal que nos une a todos.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Services Page -->
+    <div id="services" class="page">
+        <div class="container">
+            <h1 class="page-title">Nuestros Servicios</h1>
+            <section class="section">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">👼</div>
+                        <h3>Lecturas Angelicales Personalizadas</h3>
+                        <p>Recibe mensajes directos de tus ángeles guardianes y arcángeles. Cada sesión incluye orientación sobre tu camino espiritual, propósito de vida y respuestas a tus preguntas más profundas.</p>
+                        <strong style="color: var(--primary-blue);">Duración: 60 minutos</strong>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🃏</div>
+                        <h3>Tarot Angelical Completo</h3>
+                        <p>Consulta integral con cartas angelicales que revela insights sobre amor, trabajo, familia y crecimiento espiritual. Incluye interpretación detallada y consejos prácticos.</p>
+                        <strong style="color: var(--primary-blue);">Duración: 45 minutos</strong>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📿</div>
+                        <h3>Sesiones de Péndulo</h3>
+                        <p>Obtén respuestas claras y directas mediante la radiestesia. Ideal para decisiones importantes y preguntas específicas que requieren un sí o no del universo.</p>
+                        <strong style="color: var(--primary-blue);">Duración: 30 minutos</strong>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🕯️</div>
+                        <h3>Meditación Guiada</h3>
+                        <p>Sesiones de meditación personalizadas para encontrar tu centro interior, reducir el estrés y conectar con tu esencia espiritual a través de técnicas de respiración consciente.</p>
+                        <strong style="color: var(--primary-blue);">Duración: 45 minutos</strong>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💫</div>
+                        <h3>Sanación Energética</h3>
+                        <p>Limpieza y equilibrio de chakras, eliminación de bloqueos energéticos y armonización de tu campo áurico para promover el bienestar integral.</p>
+                        <strong style="color: var(--primary-blue);">Duración: 75 minutos</strong>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🌙</div>
+                        <h3>Consultas de Oráculo</h3>
+                        <p>Sesiones con diversos oráculos espirituales para obtener guía sobre tu camino de vida, relaciones y desarrollo personal desde múltiples perspectivas divinas.</p>
+                        <strong style="color: var(--primary-blue);">Duración: 50 minutos</strong>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <div class="container">
+            <h1 class="page-title">Contacto</h1>
+            <section class="section">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3 style="color: var(--deep-blue); margin-bottom: 2rem; font-size: 1.8rem;">Información de Contacto</h3>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <strong>Dirección</strong><br>
+                                Calle de la Luz Angelical 123<br>
+                                Cali, Valle del Cauca<br>
+                                Colombia
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <strong>Teléfono</strong><br>
+                                +57 312 456 7890<br>
+                                +57 2 555 1234
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <strong>Email</strong><br>
+                                contacto@luzangelical.com<br>
+                                consultas@luzangelical.com
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">🕐</div>
+                            <div>
+                                <strong>Horarios de Atención</strong><br>
+                                Lunes a Viernes: 9:00 AM - 6:00 PM<br>
+                                Sábados: 10:00 AM - 4:00 PM<br>
+                                Domingos: Solo emergencias
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">🌐</div>
+                            <div>
+                                <strong>Consultas Online</strong><br>
+                                Disponibles via WhatsApp, Zoom<br>
+                                y videollamada
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <h3 style="color: var(--deep-blue); margin-bottom: 2rem; font-size: 1.8rem;">Reserva tu Consulta</h3>
+                        <form>
+                            <div class="form-group">
+                                <label for="nombre">Nombre Completo</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="servicio">Servicio de Interés</label>
+                                <select id="servicio" name="servicio" style="width: 100%; padding: 1rem; border: 2px solid var(--soft-blue); border-radius: 10px; font-size: 1rem;">
+                                    <option value="">Selecciona un servicio</option>
+                                    <option value="lectura-angelical">Lectura Angelical</option>
+                                    <option value="tarot-angelical">Tarot Angelical</option>
+                                    <option value="pendulo">Consulta con Péndulo</option>
+                                    <option value="meditacion">Meditación Guiada</option>
+                                    <option value="sanacion">Sanación Energética</option>
+                                    <option value="oraculo">Consulta de Oráculo</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mensaje">Mensaje</label>
+                                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos brevemente sobre tu consulta o pregunta espiritual..."></textarea>
+                            </div>
+
+                            <button type="submit" class="cta-button" style="width: 100%;">Enviar Consulta</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Luz Angelical</h3>
+                    <p>Conectando almas con la sabiduría divina desde 2020. Tu camino espiritual comienza aquí.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Servicios</h3>
+                    <p>Lecturas Angelicales • Tarot Angelical • Péndulo • Meditación • Sanación Energética • Oráculos</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">🐦</a>
+                        <a href="#" class="social-link">💬</a>
+                    </div>
+                </div>
+            </div>
+            <p style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                © 2024 Luz Angelical. Todos los derechos reservados. | Hecho con amor y luz ✨
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple page navigation
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Smooth scrolling for internal links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add animation delays to service cards
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+
+            // Form submission handler
+            const contactForm = document.querySelector('.contact-form form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('¡Gracias por tu mensaje! Te contactaremos pronto para programar tu consulta espiritual. 🙏✨');
+                    this.reset();
+                });
+            }
+
+            // Animate sections on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections
+            document.querySelectorAll('.section').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Add floating animation to hero
+            const heroContent = document.querySelector('.hero-content');
+            if (heroContent) {
+                setInterval(() => {
+                    heroContent.style.transform = 'translateY(' + (Math.sin(Date.now() / 1000) * 5) + 'px)';
+                }, 50);
+            }
+
+            // Mobile menu toggle (for future enhancement)
+            const navToggle = document.createElement('div');
+            navToggle.className = 'nav-toggle';
+            navToggle.innerHTML = '☰';
+            navToggle.style.cssText = `
+                display: none;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+                @media (max-width: 768px) {
+                    display: block;
+                }
+            `;
+            
+            const navContainer = document.querySelector('.nav-container');
+            if (navContainer) {
+                navContainer.appendChild(navToggle);
+            }
+        });
+
+        // Add sparkle effect on hover for service cards
+        document.addEventListener('mouseover', function(e) {
+            if (e.target.closest('.service-card')) {
+                createSparkle(e.target.closest('.service-card'));
+            }
+        });
+
+        function createSparkle(element) {
+            const sparkle = document.createElement('div');
+            sparkle.innerHTML = '✨';
+            sparkle.style.cssText = `
+                position: absolute;
+                top: ${Math.random() * 100}%;
+                left: ${Math.random() * 100}%;
+                font-size: 1rem;
+                pointer-events: none;
+                animation: sparkleAnimation 1s ease-out forwards;
+                z-index: 10;
+            `;
+            
+            // Add sparkle animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes sparkleAnimation {
+                    0% {
+                        opacity: 1;
+                        transform: scale(0) rotate(0deg);
+                    }
+                    50% {
+                        opacity: 1;
+                        transform: scale(1) rotate(180deg);
+                    }
+                    100% {
+                        opacity: 0;
+                        transform: scale(0) rotate(360deg);
+                    }
+                }
+            `;
+            
+            if (!document.querySelector('style[data-sparkle]')) {
+                style.setAttribute('data-sparkle', 'true');
+                document.head.appendChild(style);
+            }
+            
+            element.style.position = 'relative';
+            element.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 1000);
+        }
+
+        // Add breathing animation to icons
+        document.addEventListener('DOMContentLoaded', function() {
+            const icons = document.querySelectorAll('.service-icon');
+            icons.forEach((icon, index) => {
+                icon.style.animation = `breathe 3s ease-in-out infinite`;
+                icon.style.animationDelay = `${index * 0.5}s`;
+            });
+            
+            // Add breathing animation CSS
+            const breatheStyle = document.createElement('style');
+            breatheStyle.textContent = `
+                @keyframes breathe {
+                    0%, 100% { transform: scale(1); }
+                    50% { transform: scale(1.05); }
+                }
+            `;
+            document.head.appendChild(breatheStyle);
+        });
+
+        // Easter egg: Konami code for special blessing
+        let konamiCode = [];
+        const konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+        
+        document.addEventListener('keydown', function(e) {
+            konamiCode.push(e.keyCode);
+            if (konamiCode.length > konami.length) {
+                konamiCode.shift();
+            }
+            
+            if (konamiCode.toString() === konami.toString()) {
+                showSpecialBlessing();
+                konamiCode = [];
+            }
+        });
+
+        function showSpecialBlessing() {
+            const blessing = document.createElement('div');
+            blessing.innerHTML = `
+                <div style="
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: linear-gradient(135deg, var(--soft-gold), var(--primary-blue));
+                    padding: 2rem;
+                    border-radius: 20px;
+                    text-align: center;
+                    z-index: 10000;
+                    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+                    color: white;
+                    font-family: 'Manrope', sans-serif;
+                    max-width: 400px;
+                ">
+                    <h3>🙏 Bendición Especial 🙏</h3>
+                    <p style="margin: 1rem 0;">Los ángeles han notado tu curiosidad espiritual. Que la luz divina ilumine tu camino y que encuentres la paz que buscas en tu corazón.</p>
+                    <p style="font-size: 2rem; margin: 1rem 0;">✨👼💫</p>
+                    <button onclick="this.parentElement.parentElement.remove()" style="
+                        background: white;
+                        color: var(--deep-blue);
+                        border: none;
+                        padding: 0.5rem 1rem;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        font-weight: 500;
+                    ">Recibir Bendición</button>
+                </div>
+            `;
+            document.body.appendChild(blessing);
+            
+            // Auto-remove after 10 seconds
+            setTimeout(() => {
+                if (blessing.parentElement) {
+                    blessing.remove();
+                }
+            }, 10000);
+        }
+    </script>
+</body>
+</html>
+            
