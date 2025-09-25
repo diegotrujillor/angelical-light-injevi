@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luz Angelical - Conecta con tu Esencia Espiritual</title>
+    <title>Ecos Angelicales - Conecta con tu Esencia Espiritual</title>
+    <link rel="icon" type="image/x-icon" href="ecos-angelicales.ico">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -29,6 +30,8 @@
             line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--warm-white);
+            background-image: url('bg-image.jpg');
+            background-size: cover;
         }
 
         .container {
@@ -108,7 +111,7 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(135deg, rgba(74, 144, 226, 0.9), rgba(44, 82, 130, 0.8)), 
+            background: linear-gradient(135deg, rgba(133, 182, 238, 0.9), rgba(99, 117, 139, 0.8)),
                         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><radialGradient id="g1" cx="50%" cy="40%"><stop offset="0%" style="stop-color:%23E8F2FF;stop-opacity:0.3"/><stop offset="100%" style="stop-color:%234A90E2;stop-opacity:0.1"/></radialGradient></defs><rect width="1200" height="800" fill="url(%23g1)"/><circle cx="200" cy="150" r="3" fill="%23F4E4BC" opacity="0.6"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/></circle><circle cx="800" cy="200" r="2" fill="%23F4E4BC" opacity="0.5"><animate attributeName="opacity" values="0.2;0.7;0.2" dur="4s" repeatCount="indefinite"/></circle><circle cx="1000" cy="300" r="2.5" fill="%23F4E4BC" opacity="0.4"><animate attributeName="opacity" values="0.1;0.6;0.1" dur="5s" repeatCount="indefinite"/></circle></svg>');
             background-size: cover;
             background-position: center;
@@ -247,6 +250,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
             align-items: center;
+            padding: 20px;
         }
 
         .about-text {
@@ -424,7 +428,7 @@
             font-size: 3rem;
             text-align: center;
             margin: 3rem 0;
-            color: var(--deep-blue);
+            color: var(--warm-white);
         }
     </style>
 </head>
@@ -433,7 +437,7 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-container">
-                <a href="#" class="logo" onclick="showPage('home')">Luz Angelical</a>
+                <a href="#" class="logo" onclick="showPage('home')">Ecos Angelicales</a>
                 <ul class="nav-menu">
                     <li><a href="#" class="nav-link" onclick="showPage('home')">Inicio</a></li>
                     <li><a href="#" class="nav-link" onclick="showPage('about')">Nosotros</a></li>
@@ -449,7 +453,7 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                <h1>Bienvenido a Luz Angelical</h1>
+                <h1>Bienvenido a Ecos Angelicales</h1>
                 <p>Conecta con tu esencia espiritual a través de la sabiduría angelical, el tarot y la meditación. Encuentra paz, armonía y amor incondicional en tu camino de despertar interior.</p>
                 <a href="#" class="cta-button" onclick="showPage('services')">Explorar Servicios</a>
             </div>
@@ -492,8 +496,8 @@
             <section class="section">
                 <div class="about-content">
                     <div class="about-text">
-                        <h3 style="color: var(--deep-blue); font-size: 2rem; margin-bottom: 1rem;">Nuestra Misión Espiritual</h3>
-                        <p>En Luz Angelical, creemos profundamente en el poder transformador de la conexión espiritual. Nuestro propósito es guiarte en tu viaje de despertar y autoconocimiento, ayudándote a encontrar tu luz interior y conectar con la sabiduría universal.</p>
+                        <h3 style="color: var(--deep-blue); font-size: 2rem; margin-bottom: 1rem; padding: 5px;">Nuestra Misión Espiritual</h3>
+                        <p>En Ecos Angelicales, creemos profundamente en el poder transformador de la conexión espiritual. Nuestro propósito es guiarte en tu viaje de despertar y autoconocimiento, ayudándote a encontrar tu luz interior y conectar con la sabiduría universal.</p>
                         
                         <p>A través de décadas de experiencia en las artes espirituales, hemos desarrollado un enfoque integral que combina la antigua sabiduría de los ángeles y arcángeles con técnicas modernas de meditación, introspección y sanación energética.</p>
                         
@@ -597,7 +601,7 @@
                             <div class="contact-icon">📍</div>
                             <div>
                                 <strong>Dirección</strong><br>
-                                Calle de la Luz Angelical 123<br>
+                                Barrio Álamos<br>
                                 Cali, Valle del Cauca<br>
                                 Colombia
                             </div>
@@ -607,8 +611,7 @@
                             <div class="contact-icon">📞</div>
                             <div>
                                 <strong>Teléfono</strong><br>
-                                +57 312 456 7890<br>
-                                +57 2 555 1234
+                                +57 300 347 6204
                             </div>
                         </div>
 
@@ -616,8 +619,7 @@
                             <div class="contact-icon">📧</div>
                             <div>
                                 <strong>Email</strong><br>
-                                contacto@luzangelical.com<br>
-                                consultas@luzangelical.com
+                                injevi@gmail.com
                             </div>
                         </div>
 
@@ -626,8 +628,7 @@
                             <div>
                                 <strong>Horarios de Atención</strong><br>
                                 Lunes a Viernes: 9:00 AM - 6:00 PM<br>
-                                Sábados: 10:00 AM - 4:00 PM<br>
-                                Domingos: Solo emergencias
+                                Sábados: 10:00 AM - 1:00 PM
                             </div>
                         </div>
 
@@ -636,14 +637,14 @@
                             <div>
                                 <strong>Consultas Online</strong><br>
                                 Disponibles via WhatsApp, Zoom<br>
-                                y videollamada
+                                y videollamada (FaceTime)
                             </div>
                         </div>
                     </div>
 
                     <div class="contact-form">
                         <h3 style="color: var(--deep-blue); margin-bottom: 2rem; font-size: 1.8rem;">Reserva tu Consulta</h3>
-                        <form>
+                        <form action="send_email.php" method="post">
                             <div class="form-group">
                                 <label for="nombre">Nombre Completo</label>
                                 <input type="text" id="nombre" name="nombre" required>
@@ -676,6 +677,11 @@
                                 <label for="mensaje">Mensaje</label>
                                 <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos brevemente sobre tu consulta o pregunta espiritual..."></textarea>
                             </div>
+                            
+                                <!-- <button
+                                    onclick="window.location.href='mailto:diegotrujillor@gmail.com?subject=Form%20Submission&body=Name:%20John%0AEmail:%20john@example.com%0AMessage:%20Hello%20there!'">
+                                    Send Email via Mail Client
+                                </button> -->
 
                             <button type="submit" class="cta-button" style="width: 100%;">Enviar Consulta</button>
                         </form>
@@ -690,8 +696,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Luz Angelical</h3>
-                    <p>Conectando almas con la sabiduría divina desde 2020. Tu camino espiritual comienza aquí.</p>
+                    <h3>Ecos Angelicales</h3>
+                    <p>Conectando almas con la sabiduría divina desde 2023. Tu camino espiritual comienza aquí.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Servicios</h3>
@@ -708,7 +714,7 @@
                 </div>
             </div>
             <p style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2);">
-                © 2024 Luz Angelical. Todos los derechos reservados. | Hecho con amor y luz ✨
+                © 2025 Ecos Angelicales. Todos los derechos reservados. | Hecho con amor y luz ✨
             </p>
         </div>
     </footer>
